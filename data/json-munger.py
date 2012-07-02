@@ -174,13 +174,15 @@ def getEventName(event):
 
 def mungeEvents(inputRecord, outputRecord):
     events = [ event[1:4] for event in inputRecord["events"] if event[0] == 1]
+    total_events = 0
     for event in events:
         name = lazyGetEventName(event)
+        total_events += 1
         if outputRecord.has_key(name):
             outputRecord[name] += 1
         else:
             outputRecord[name] = 1
-
+    outputRecord["numEvents"] = total_events
 
 def munge(inFileName, outFileName, userLimit):
     infile = open(inFileName, "r")
