@@ -154,7 +154,18 @@ if __name__ == "__main__":
         sg = StatGenerator(datafile_name, expr, filter=filter, user_filter=user_filter)
         print sg.faststat()
         
+    ###
+    #x = expression
+    #d = datafile name
+    #f = filter (only consider this set of events)
+    #u = user fileter (only consider users who have at least one of the following type of event)
+    
+    #example usage: python statgen.py -x "[urlbar,*,*]" -d events.txt -f [*,*,*] -u "[searchbar,*,*]"
+    
     
     
     #cut -d[ -f3-4 events.txt| cut -d] -f1| cut -d, -f1-3 | tr -d '"' | sed 's/, /,/g' | sort | uniq
-    #usage: python statgen.py -x "[urlbar,*,*,*]" -d events.txt -f [*,*,*,*] -u "[searchbar,*,*,*]"
+
+    
+    
+    
